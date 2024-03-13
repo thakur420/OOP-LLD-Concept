@@ -1,22 +1,26 @@
 package OOPS;
 
-public class Main implements DefaultAndStaticMethod{
+public class Main{
     public static void main(String[] args) {
+        // Concept1 -> Interface Default and Static Method
         DefaultAndStaticMethod.staticMethod();
-        Main main = new Main();
-        main.defaultMethod();
-        main.abstractMethod();
+        DefaultAndStaticMethodChild obj1 = new DefaultAndStaticMethodChild();
+        obj1.abstractMethod();
+        obj1.defaultMethod();
+
+        // Concept2 -> Static Method Overriding vs hiding
+        StaticMethodOverriding obj2 = new StaticMethodOverridingChild();
+        obj2.staticMethod();
+        obj2.nonStaticMethod();
+
+        StaticMethodOverridingChild obj3 = new StaticMethodOverridingChild();
+        obj3.staticMethod();
+        obj3.nonStaticMethod();
+
+
+
 
     }
 
-    @Override
-    public void defaultMethod() {
-//        DefaultAndStaticMethod.super.defaultMethod();
-        System.out.println("My Implementation of Default Method");
-    }
 
-    @Override
-    public void abstractMethod() {
-        System.out.println("My Implementation of abstract Method");
-    }
 }
